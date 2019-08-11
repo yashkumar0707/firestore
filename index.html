@@ -1,6 +1,8 @@
 <html>
     <head>
-        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="style.css">
+        <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-firestore.js"></script>
     </head>
     <body>
 
@@ -8,12 +10,39 @@
 
         <div class="content">
 
-            <form id="add-cafe-form"></form>
+            <form id="add-cafe-form">
+              <input type="text" name="name" placeholder="Cafe name">
+              <input type="text" name="city" placeholder="Cafe city">
+              <button> Add Cafe </button>
+        
+            </form>
 
             <ul id="cafe-list"></ul>
 
         </div>
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
 
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#config-web-app -->
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyAt3o9rYXYMrtusJ62CxlyUoaonF7c8NRE",
+    authDomain: "tutorial-a3cd6.firebaseapp.com",
+    databaseURL: "https://tutorial-a3cd6.firebaseio.com",
+    projectId: "tutorial-a3cd6",
+    storageBucket: "tutorial-a3cd6.appspot.com",
+    messagingSenderId: "352490651268",
+    appId: "1:352490651268:web:7cf5850af62ba8a5"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  const db=firebase.firestore();
+  db.settings({timestampsInSnapshots: true})
+
+</script>
         <script src="app.js"></script>
     </body>
 </html>
